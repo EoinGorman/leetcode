@@ -10,18 +10,21 @@ end
 # @param {ListNode} head
 # @return {ListNode}
 def middle_node(head)
-  middle = head
+  node_count = list_length(head)
+  middle_number = (node_count / 2)
+  middle_number.times do
+    head = head.next
+  end
+  head
+end
+
+def list_length(head)
   node_count = 0
   until head.nil?
     head = head.next
     node_count += 1
   end
-
-  middle_number = (node_count / 2)
-  middle_number.times do
-    middle = middle.next
-  end
-  middle
+  node_count
 end
 
 if __FILE__ == $0
