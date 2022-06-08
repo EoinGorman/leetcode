@@ -12,6 +12,7 @@ def fizz_buzz_encode(n)
     return 'FizzBuzz' if n.modulo(3) == 0 && n.modulo(5) == 0
     return 'Fizz' if n.modulo(3) == 0
     return 'Buzz' if n.modulo(5) == 0
+
     return n.to_s
 end
 
