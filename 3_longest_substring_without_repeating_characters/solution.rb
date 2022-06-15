@@ -6,7 +6,7 @@ def length_of_longest_substring(s)
   best = 0
   s.each_char.with_index do |c, i|
     # remaining = s.length - (i + 1)
-    # break if remaining < best
+    # break if remaining < best # speed optimization that utilizes extra memory
 
     sub_length = longest_substring_from(c, i, s)
     best = sub_length if sub_length > best
