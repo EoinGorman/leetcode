@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # @param {Integer[]} nums
 # @param {Integer} target
 # @return {Integer[]}
@@ -6,7 +8,7 @@ def two_sum(nums, target)
   desired = 0
   nums_without_current = nums.dup
 
-  nums.each_with_index do |num, index|
+  nums.each.with_index do |num, index|
     result[0] = index
 
     desired = target - num
@@ -20,8 +22,6 @@ def two_sum(nums, target)
   result[1] = nums_without_current.index(desired) + 1
   result
 end
-
-
 
 output = two_sum([2, 7, 11, 15], 9)
 puts "Result: #{output}"
